@@ -22,7 +22,7 @@ stages {
   }
 
   stage('DEPLOY') {
-  agent {label'slave1'}
+  agent any
     steps {
      script {
     if (params.STAGE=='deploy')
