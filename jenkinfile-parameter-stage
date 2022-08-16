@@ -1,6 +1,6 @@
 pipeline {
 agent none
-properties([parameters([choice(choices: ['build', 'deploy', 'test'], description: 'stages to Run', name: 'STAGE')])])
+options([parameters([choice(choices: ['build', 'deploy', 'test'], description: 'stages to Run', name: 'STAGE')])])
 stages {
   stage('BUILD') {
   agent any
