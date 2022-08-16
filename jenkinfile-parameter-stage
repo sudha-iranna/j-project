@@ -3,6 +3,7 @@ agent any
 stages {
   stage('BUILD') {
     steps {
+    git branch: 'main', url: 'https://github.com/sudha-iranna/j-project.git'
       // One or more steps need to be included within the steps block.
     }
   }
