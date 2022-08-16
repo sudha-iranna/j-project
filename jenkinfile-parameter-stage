@@ -11,7 +11,9 @@ stages {
     if (params.STAGE=='build')
     {
     git branch: 'main', url: 'https://github.com/sudha-iranna/j-project.git'
-     sh 'echo "this is build stage"'
+     sh ''' echo "this is build stage"
+       mnv clean install
+       '''
          }
          else {
          echo "skipping build stage"
