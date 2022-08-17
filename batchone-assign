@@ -20,15 +20,25 @@ stages {
     }
   }
 
-  stage('TEST') {
+  stage('TEST1') {
       when {
       expression { params.BRANCH == 'master' }
     }
     steps {
-     echo "this is test stage" 
+     echo "this is test1 stage" 
 	
     }
   }
+  
+ stage('TEST2') {
+      when {
+      expression { params.BRANCH == 'master' }
+    }
+    steps {
+     echo "this is test2 stage" 
+	
+    }
+  } 
 
 }
 
