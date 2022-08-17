@@ -6,19 +6,14 @@ parameters {
 
 stages {
   stage('BUILD') {
-      when {
-      expression { params.STAGE == 'BUILD' }
-    }
-    steps {
+        steps {
       echo "this is build stage"
 	  // One or more steps need to be included within the steps block.
     }
   }
 
   stage('DEPLOY') {
-      when {
-      expression { params.STAGE == 'DEPLOY' }
-    }
+     
     steps {
      echo "this is deploy stage" 
 	 // One or more steps need to be included within the steps block.
@@ -27,7 +22,7 @@ stages {
 
   stage('TEST') {
       when {
-      expression { params.STAGE == 'TEST' }
+      expression { params.BRANCH == 'master' }
     }
     steps {
      echo "this is test stage" 
