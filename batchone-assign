@@ -5,7 +5,10 @@ parameters {
 }
 
 stages {
-  /*stage('BUILD') {
+  stage('BUILD') {
+  when {
+      expression { params.BRANCH == 'main' }
+    }
         steps {
       echo "this is build stage"
 	  // One or more steps need to be included within the steps block.
@@ -13,12 +16,14 @@ stages {
   }
 
   stage('DEPLOY') {
-     
+     when {
+      expression { params.BRANCH == 'main' }
+    }
     steps {
      echo "this is deploy stage" 
 	 // One or more steps need to be included within the steps block.
     }
-  }*/
+  }
 
   stage('TEST1') {
       when {
